@@ -63,6 +63,6 @@ if intChoice == 1 || intChoice == 2 {
         print("\n\n🎉🎉 Parabéns! Você venceu! 🎉🎉\n\n")
     } else {
         print("\n\nQue pena! não foi dessa vez...")
-        print("Boa sorte da próxima vez")
+        print("Boa sorte da próxima vez\n\n")
     }
 }
