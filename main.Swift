@@ -38,31 +38,38 @@ if intChoice == 1 || intChoice == 2 {
         print("Escolha um número inteiro de 1 a 10.")
         playerChoice = readLine()!
         intPlayerChoice = Int(playerChoice)!
-        sum += intPlayerChoice
         
-        computerChoice = Int.random(in: 1...10)
-        print("\nO computador escolheu o número \(computerChoice)")
+        if 1 <= intPlayerChoice && intPlayerChoice <= 10 {
+            sum += intPlayerChoice
+            
+            computerChoice = Int.random(in: 1...10)
+            print("\nO computador escolheu o número \(computerChoice)")
+            
+            sum += computerChoice
+            print("\nOs números somados totalizam \(sum)")
+            
+            evenOrOdd = sum % 2
+            
+            if (intChoice == 1 && evenOrOdd == 0) || (intChoice == 2 && evenOrOdd == 1){
+                wins += 1
+                print("\nVocê venceu essa rodada.\n")
+            } else {
+                print("\nO computador venceu essa rodada.\n")
+            }
         
-        sum += computerChoice
-        print("\nOs números somados totalizam \(sum)")
-        
-        evenOrOdd = sum % 2
-        
-        if (intChoice == 1 && evenOrOdd == 0) || (intChoice == 2 && evenOrOdd == 1){
-            wins += 1
-            print("\nVocê venceu essa rodada.\n")
         } else {
-            print("\nO computador venceu essa rodada.\n")
+            print("\nEscolha inválida. O computador ganhou esta rodada.\n")
+        }
+            
+            sum = 0
+            
         }
         
-        sum = 0
+        if wins == 2 {
+            print("\n\n🎉🎉 Parabéns! Você venceu! 🎉🎉\n\n")
+        } else {
+            print("\n\nQue pena! não foi dessa vez...")
+            print("Boa sorte da próxima vez\n\n")
+        }
         
-    }
-    
-    if wins == 2 {
-        print("\n\n🎉🎉 Parabéns! Você venceu! 🎉🎉\n\n")
-    } else {
-        print("\n\nQue pena! não foi dessa vez...")
-        print("Boa sorte da próxima vez\n\n")
-    }
 }
